@@ -661,4 +661,26 @@ class Paystack
         return $this->setHttpResponse("/subaccount/{$subaccount_code}", "PUT", array_filter($data))->getResponse();
 
     }
+
+    /**
+     * Creates a transfer recipient used transfer of payments . Required params are type , name , account_number , bank_code
+     * @param TransferRecipient code 
+     * @return array
+     */
+
+    public function createTransferRecipient()
+    {
+        $data = [
+            "type" => request()->type,
+            "name" => request()->name,
+            "account_number" => request()->account_number,
+            "bank_code" => request()->bank_code,
+            "currency" => request()->currency,
+            "metadata" => request()->metadata
+
+        ];
+
+        $this->setRequestOptions();
+        return $this->setHttpResponse('/transferrecipient', 'POST', array_filter($data))->getResponse();
+    }
 }
