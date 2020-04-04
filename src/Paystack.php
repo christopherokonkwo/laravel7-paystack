@@ -100,11 +100,11 @@ class Paystack
         );
     }
 
-   
+
      /**
-     
+
      * Initiate a payment request to Paystack
-     * Included the option to pass the payload to this method for situations 
+     * Included the option to pass the payload to this method for situations
      * when the payload is built on the fly (not passed to the controller from a view)
      * @return Paystack
      */
@@ -130,7 +130,7 @@ class Paystack
                 *                                                            .
                 *                                                            .
                 *                                                        ]
-                *                                        
+                *
                 *                                  ]
                 */
                 'metadata' => request()->metadata
@@ -179,10 +179,10 @@ class Paystack
 
         return $this;
     }
-    
+
      /**
      * Get the authorization callback response
-     * In situations where Laravel serves as an backend for a detached UI, the api cannot redirect 
+     * In situations where Laravel serves as an backend for a detached UI, the api cannot redirect
      * and might need to take different actions based on the success or not of the transaction
      * @return array
      */
@@ -590,13 +590,13 @@ class Paystack
 
      /**
      * Creates a subaccount to be used for split payments . Required    params are business_name , settlement_bank , account_number ,   percentage_charge
-     * 
+     *
      * @return array
      */
-    
+
     public function createSubAccount(){
         $data = [
-            "business_name" => request()->business_name, 
+            "business_name" => request()->business_name,
             "settlement_bank" => request()->settlement_bank,
             "account_number" => request()->account_number,
             "percentage_charge" => request()->percentage_charge,
@@ -639,13 +639,13 @@ class Paystack
 
     /**
      * Updates a subaccount to be used for split payments . Required params are business_name , settlement_bank , account_number , percentage_charge
-     * @param subaccount code 
+     * @param subaccount code
      * @return array
      */
-    
+
     public function updateSubAccount($subaccount_code){
         $data = [
-            "business_name" => request()->business_name, 
+            "business_name" => request()->business_name,
             "settlement_bank" => request()->settlement_bank,
             "account_number" => request()->account_number,
             "percentage_charge" => request()->percentage_charge,
@@ -664,7 +664,7 @@ class Paystack
 
     /**
      * Creates a transfer recipient used transfer of payments . Required params are type , name , account_number , bank_code
-     * @param TransferRecipient code 
+     * @param TransferRecipient code
      * @return array
      */
 
@@ -681,6 +681,45 @@ class Paystack
         ];
 
         $this->setRequestOptions();
-        return $this->setHttpResponse('/transferrecipient', 'POST', array_filter($data))->getResponse();
+        return $this->setHttpResponse("/transferrecipient", "POST", array_filter($data))->getResponse();
+    }
+
+    /**
+     * Updates a transfer recipient used transfer of payments . Required param is recipient_id
+     * @param TransferRecipient id
+     * @return array
+     */
+
+    public function updateTransferRecipient($recipient_id)
+    {
+        $data = [
+            "type" => request()->type,
+            "name" => request()->name,
+            "account_number" => request()->account_number,
+            "bank_code" => request()->bank_code,
+            "currency" => request()->currency,
+            "metadata" => request()->metadata
+        ];
+
+        $this->setRequestOptions();
+        return $this->setHttpResponse("/transferrecipient/{$recipient_id}", "PUT", array_filter($data))->getResponse();
+    }
+
+    /**
+     * Delete a transfer recipient
+     *
+     * @param string $recipient_code_or_id
+     * @return void
+     */
+    public function deleteTransferRecipient($recipient_code_or_id)
+    {
+        $this->setRequestOptions();
+        return $this->setHttpResponse("/transferrecipient/{$recipient_code_or_id}", "DELETE")->getResponse();
+    }
+
+    public function listTransferRecipients()
+    {
+        $this->setRequestOptions();
+        return $this->setHttpResponse("/transferrecipient", "GET")->getResponse();
     }
 }
