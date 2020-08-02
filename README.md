@@ -32,16 +32,16 @@ You'll then need to run `composer install` or `composer update` to download it a
 
 Once Laravel Paystack is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
-> If you use **Laravel >= 5.5** you can skip this step and go to [**`configuration`**](https://github.com/unicodeveloper/laravel-paystack#configuration)
+> If you use **Laravel >= 5.5** you can skip this step and go to [**`configuration`**](https://github.com/christopherokonkwo/laravel7-paystack#configuration)
 
-* `Unicodeveloper\Paystack\PaystackServiceProvider::class`
+* `ChristopherOkonkwo\Paystack\PaystackServiceProvider::class`
 
 Also, register the Facade like so:
 
 ```php
 'aliases' => [
     ...
-    'Paystack' => Unicodeveloper\Paystack\Facades\Paystack::class,
+    'Paystack' => ChristopherOkonkwo\Paystack\Facades\Paystack::class,
     ...
 ]
 ```
@@ -51,7 +51,7 @@ Also, register the Facade like so:
 You can publish the configuration file using this command:
 
 ```bash
-php artisan vendor:publish --provider="Unicodeveloper\Paystack\PaystackServiceProvider"
+php artisan vendor:publish --provider="ChristopherOkonkwo\Paystack\PaystackServiceProvider"
 ```
 
 A configuration-file named `paystack.php` with some sensible defaults will be placed in your `config` directory:
@@ -330,7 +330,7 @@ Please feel free to fork this package and contribute by submitting a pull reques
 
 Why not star the github repo? I'd love the attention! Why not share the link for this repository on Twitter or HackerNews? Spread the word!
 
-Don't forget to [follow me on twitter](https://twitter.com/unicodeveloper)!
+Don't forget to [follow me on twitter](https://twitter.com/xtopherc43)!
 
 Thanks!
 Prosper Otemuyiwa.
