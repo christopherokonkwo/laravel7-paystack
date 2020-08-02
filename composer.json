@@ -1,6 +1,6 @@
 {
-    "name": "unicodeveloper/laravel-paystack",
-    "description": "A Laravel 5 Package for Paystack",
+    "name": "christopherokonkwo/laravel7-paystack",
+    "description": "A Laravel 5, 6 and 7 Package for Paystack",
     "keywords": ["php","github", "laravel","Open Source","payments", "subscription", "paystack", "paystack.co","laravel 5"],
     "license": "MIT",
     "authors": [
@@ -11,6 +11,10 @@
       {
         "name": "iamfunsho",
         "email": "info@devfunsho.com"
+      },
+      {
+        "name": "christopher okonkwo",
+        "email": "xtopherc43@gmail.com"
       }
    ],
    "minimum-stability": "stable",
@@ -27,12 +31,12 @@
     },
    "autoload": {
         "psr-4": {
-          "Unicodeveloper\\Paystack\\": "src/"
+          "ChristopherOkonkwo\\Paystack\\": "src/"
         }
    },
    "autoload-dev": {
         "psr-4": {
-            "Unicodeveloper\\Paystack\\Test\\": "tests"
+            "ChristopherOkonkwo\\Paystack\\Test\\": "tests"
         }
     },
     "scripts": {
@@ -41,10 +45,10 @@
    "extra": {
     "laravel": {
         "providers": [
-            "Unicodeveloper\\Paystack\\PaystackServiceProvider"
+            "ChristopherOkonkwo\\Paystack\\PaystackServiceProvider"
         ],
         "aliases": {
-            "Paystack": "Unicodeveloper\\Paystack\\Facades\\Paystack"
+            "Paystack": "ChristopherOkonkwo\\Paystack\\Facades\\Paystack"
         }
     }
   }
