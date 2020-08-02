@@ -17,13 +17,13 @@
 To get the latest version of Laravel Paystack, simply require it
 
 ```bash
-composer require unicodeveloper/laravel-paystack
+composer require christopherokonkwo/laravel-paystack
 ```
 
 Or add the following line to the require block of your `composer.json` file.
 
 ```
-"unicodeveloper/laravel-paystack": "1.0.*"
+"christopherokonkwo/laravel-paystack": "1.0.*"
 ```
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
