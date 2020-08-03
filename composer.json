@@ -17,7 +17,7 @@
         "email": "xtopherc43@gmail.com"
       }
    ],
-   "minimum-stability": "stable",
+   "minimum-stability": "dev",
    "require": {
     "php": "^5.4.0|^7.0",
     "illuminate/support": "5.*|^6|^7",
