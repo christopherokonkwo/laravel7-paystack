@@ -1,5 +1,5 @@
 {
-    "name": "christopherokonkwo/laravel-paystack",
+    "name": "christopherokonkwo/laravel7-paystack",
     "description": "A Laravel 5, 6 and 7 Package for Paystack",
     "keywords": ["php","github", "laravel","Open Source","payments", "subscription", "paystack", "paystack.co","laravel 5"],
     "license": "MIT",
